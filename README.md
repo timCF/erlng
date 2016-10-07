@@ -1,0 +1,24 @@
+# Erlng
+
+**TODO: Add description**
+
+## Installation
+
+If [available in Hex](https://hex.pm/docs/publish), the package can be installed as:
+
+  1. Add `erlng` to your list of dependencies in `mix.exs`:
+
+    ```elixir
+    def deps do
+      [{:erlng, "~> 0.1.0"}]
+    end
+    ```
+
+  2. Ensure `erlng` is started before your application:
+
+    ```elixir
+    def application do
+      [applications: [:erlng]]
+    end
+    ```
+
