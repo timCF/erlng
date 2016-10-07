@@ -31,8 +31,8 @@ defmodule Erlng.Generator do
 
 	defp seed() do
 		<<a :: 32, b :: 32, c :: 32>> = :crypto.strong_rand_bytes(12)
-		:rand.seed(:exs1024, {a,b,c})
-		Logger.info("#{__MODULE__} seed #{a}, #{b}, #{c}")
+		_ = :rand.seed(:exs1024, {a,b,c})
+		_ = Logger.info("#{__MODULE__} seed #{a}, #{b}, #{c}")
 	end
 
 	defp shuffle_code(el, {acc,set}) do
