@@ -29,4 +29,6 @@ defmodule Erlng do
     uniform(stop - offset) + offset
   end
 
+  def rand_at(lst = [_|_]), do: Enum.at(lst, (uniform(length(lst)) - 1))
+
 end
