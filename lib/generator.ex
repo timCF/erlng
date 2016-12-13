@@ -34,7 +34,6 @@ defmodule Erlng.Generator do
 	defp seed() do
 		<<a :: 32, b :: 32, c :: 32>> = :crypto.strong_rand_bytes(12)
 		_ = Enum.at(@algorithms, (:rand.uniform(@algorithms_len) - 1)) |> :rand.seed({a,b,c})
-		_ = Logger.info("#{__MODULE__} seed #{a}, #{b}, #{c}")
 	end
 
 	defp shuffle_code(el, {acc,set}) do
