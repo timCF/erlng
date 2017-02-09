@@ -19,9 +19,9 @@ defmodule Erlng do
     Supervisor.start_link(children, opts)
   end
 
-  def uniform(), do: GenServer.call(:erlng_seed_server, :uniform)
-  def uniform(max) when (is_integer(max) and (max > 0)), do: GenServer.call(:erlng_seed_server, {:uniform, max})
-  def shuffle(lst), do: GenServer.call(:erlng_seed_server, {:shuffle, lst})
+  def uniform(), do: GenServer.call(:erlng_seed_server, :uniform, :infinity)
+  def uniform(max) when (is_integer(max) and (max > 0)), do: GenServer.call(:erlng_seed_server, {:uniform, max}, :infinity)
+  def shuffle(lst), do: GenServer.call(:erlng_seed_server, {:shuffle, lst}, :infinity)
 
   def range(int, int) when is_integer(int), do: int
   def range(start, stop) when is_integer(stop) and is_integer(start) and (stop > start) do
